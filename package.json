@@ -1,0 +1,31 @@
+{
+  "name": "cash-desk",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@custom-react-hooks/all": "^1.4.19",
+    "@uidotdev/usehooks": "^2.4.1",
+    "axios": "^1.6.7",
+    "firebase": "^10.7.1",
+    "moment": "^2.30.1",
+    "next": "14.0.4",
+    "react": "^18",
+    "react-content-loader": "^6.2.1",
+    "react-datepicker": "^6.3.0",
+    "react-dom": "^18",
+    "react-firebase-hooks": "^5.1.1",
+    "react-toastify": "^10.0.4",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "14.0.4",
+    "react-icons": "^5.0.1"
+  }
+}

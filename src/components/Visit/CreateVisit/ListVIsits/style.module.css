@@ -1,0 +1,64 @@
+.right__list {
+  display: flex;
+  flex-direction: column;
+
+  height: 70vh;
+  overflow: hidden;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  row-gap: 20px;
+  width: 100%;
+  padding: 20px;
+}
+.right__item {
+  display: flex;
+  padding: 10px 10px 10px 15px;
+  border-radius: 10px;
+  width: 100%;
+  background-color: var(--bg-grey);
+  height: 40px;
+}
+.right__name {
+  flex-basis: 55%;
+}
+.right__name::first-letter {
+  text-transform: uppercase;
+}
+
+.right__price {
+  flex-basis: 15%;
+  text-align: center;
+}
+.right__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 15%;
+  background-color: transparent;
+}
+.right__count {
+  text-align: center;
+  width: 100%;
+  flex-basis: 15%;
+  background-color: transparent;
+}
+.left__item {
+  display: flex;
+  padding: 10px 10px 10px 15px;
+  border-radius: 10px;
+  width: 100%;
+  background-color: var(--bg-grey);
+  height: 40px;
+}
+.left__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 15%;
+  background-color: transparent;
+}
+.right__label {
+  background-color: var(--bg-nav);
+  border-radius: 3px;
+  flex-basis: 15%;
+}

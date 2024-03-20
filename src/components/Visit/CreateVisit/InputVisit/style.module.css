@@ -1,0 +1,8 @@
+.right__count {
+  text-align: center;
+  width: 100%;
+  flex-basis: 15%;
+  margin-right: 15px;
+  background-color: transparent;
+  padding: 0 5px;
+}

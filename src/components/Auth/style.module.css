@@ -1,0 +1,47 @@
+.container {
+  height: 100svh;
+  width: 100%;
+  background-color: #1010106e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+.auth {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bg);
+  border-radius: 5%;
+  padding: 40px 30px;
+  gap: 20px;
+  max-width: 450px;
+  width: 100%;
+}
+.exit {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: inherit;
+}
+.auth__label {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+.auth__input {
+  padding: 15px 20px;
+  border-radius: 10px;
+}
+.auth__text {
+  padding-left: 5px;
+}
+.auth__logIn {
+  background-color: var(--bg-button);
+  padding: 15px 30px;
+  border-radius: 10px;
+}

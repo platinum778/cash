@@ -1,0 +1,32 @@
+.skeleton {
+  background-color: var(--bg-table);
+  border-radius: 10px;
+  padding: 15px 20px;
+  width: 100%;
+}
+.product {
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin: 0 auto;
+  background-color: var(--bg-table);
+}
+.skeleton {
+  background-color: var(--bg-table);
+  padding: 15px 20px;
+}
+.product__table {
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  margin: 0 auto;
+  width: 100%;
+}
+.product__title {
+  text-align: start;
+  padding: 15px;
+}
+.product__title_name {
+  width: 40%;
+}
+.product__title_id {
+  width: 15%;
+}

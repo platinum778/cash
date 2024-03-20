@@ -1,0 +1,14 @@
+.product__tr > td {
+  padding: 15px;
+  border: black solid 1px;
+  text-align: center;
+}
+.product__td {
+  text-align: left !important;
+}
+.product__icon {
+  background-color: transparent;
+}
+.product__td {
+  cursor: pointer;
+}
