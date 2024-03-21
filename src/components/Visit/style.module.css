@@ -1,6 +1,6 @@
 .visit {
   background-color: var(--bg-black);
-  padding-top: 100px;
+  padding-top: 20px;
   min-height: 100svh;
 }
 .wrapper {
@@ -14,7 +14,7 @@
   display: flex;
   justify-content: space-between;
   align-items: start;
-  padding: 20px 50px 100px 50px;
+  padding: 20px 50px 50px 50px;
 }
 .nav__inner {
   display: flex;
