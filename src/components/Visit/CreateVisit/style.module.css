@@ -6,6 +6,11 @@
   border-radius: 10px;
   display: flex;
 }
+.datePicker{
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+}
 .left__list {
   display: flex;
   flex-direction: column;

@@ -1,14 +1,21 @@
 .product__tr > td {
-  padding: 15px;
-  border: black solid 1px;
-  text-align: center;
+    padding: 15px;
+    border: black solid 1px;
+    text-align: center;
 }
+
 .product__td {
-  text-align: left !important;
+    text-align: left !important;
 }
+
+.product__td:first-letter {
+    text-transform: uppercase;
+}
+
 .product__icon {
-  background-color: transparent;
+    background-color: transparent;
 }
+
 .product__td {
-  cursor: pointer;
+    cursor: pointer;
 }

@@ -20,7 +20,7 @@ const ProductList = () => {
                     {!loadingProduct && (
                         <thead>
                         <tr className={css.product__meta}>
-                            <th className={css.product__title}>Edit</th>
+                            <th className={css.product__title}>Редагувати</th>
                             <th
                                 className={css.product__title + " " + css.product__title_id}
                             >
@@ -29,18 +29,18 @@ const ProductList = () => {
                             <th
                                 className={css.product__title + " " + css.product__title_name}
                             >
-                                Product title
+                                Назва продукту
                             </th>
-                            <th className={css.product__title}>Difference</th>
-                            <th className={css.product__title}>Purchase price</th>
-                            <th className={css.product__title}>Selling price</th>
-                            <th className={css.product__title}>Delete</th>
+                            <th className={css.product__title}>Маржа</th>
+                            <th className={css.product__title}>Ціна закупки</th>
+                            <th className={css.product__title}>Ціна продажу</th>
+                            <th className={css.product__title}>Видалити</th>
                         </tr>
                         </thead>
                     )}
                     <tbody>
-                    {product?.map((item) => (
-                        <ProductItem key={item.id} item={item}/>
+                    {product?.map((item, index) => (
+                        <ProductItem key={item.id} item={item} index={index}/>
                     ))}
                     </tbody>
                 </table>

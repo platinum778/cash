@@ -7,60 +7,35 @@ import "react-toastify/dist/ReactToastify.css";
 
 const AddProduct = ({edit, item, setActivePopup, setActivePopup1}) => {
     const {fetchProduct} = useProduct();
-    const [formData, setFormData] = useState(
-        edit
-            ? {...item}
-            : {
-                id: uuidv4(),
-                productName: "",
-                purchasePrice: 0,
-                sellingPrice: 0,
-            }
-    );
-    const notify = () =>
-        toast.success(edit ? "Успішно відредаговано" : "Успішно створено", {
-            position: "bottom-right",
-            autoClose: 3000,
-            pauseOnHover: false,
-        });
+    const [formData, setFormData] = useState(edit ? {...item} : {
+        id: uuidv4(), productName: "", purchasePrice: 0, sellingPrice: 0,
+    });
+    const notify = () => toast.success(edit ? "Успішно відредаговано" : "Успішно створено", {
+        position: "bottom-right", autoClose: 3000, pauseOnHover: false,
+    });
 
     const handleChange = (event) => {
         const {name, value, type} = event.target;
         const newValue = type === "number" ? Math.max(0, +value) : value;
         setFormData((prevData) => ({
-            ...prevData,
-            [name]: newValue,
+            ...prevData, [name]: newValue,
         }));
     };
 
-    const isDisabled =
-        !formData.productName ||
-        formData.purchasePrice - formData.sellingPrice >= 0 ||
-        formData.purchasePrice <= 0 ||
-        formData.sellingPrice <= 0;
+    const isDisabled = !formData.productName || formData.purchasePrice - formData.sellingPrice >= 0 || formData.purchasePrice <= 0 || formData.sellingPrice <= 0;
 
     const handleSubmit = (event) => {
         event.preventDefault();
 
         try {
-            // Отримуємо дані з локального сховища
             const localProducts = JSON.parse(localStorage.getItem("products")) || [];
-
-            // Додаємо новий продукт до масиву локальних продуктів
             const updatedProducts = [...localProducts, formData];
-
-            // Зберігаємо оновлений масив продуктів у локальному сховищі
             localStorage.setItem("products", JSON.stringify(updatedProducts));
             fetchProduct();
-            // notify();
             setActivePopup(false);
             setFormData({
-                id: uuidv4(),
-                productName: "",
-                purchasePrice: '',
-                sellingPrice: '',
+                id: uuidv4(), productName: "", purchasePrice: '', sellingPrice: '',
             });
-
 
         } catch (error) {
             console.error(error);
@@ -71,17 +46,9 @@ const AddProduct = ({edit, item, setActivePopup, setActivePopup1}) => {
         try {
             event.preventDefault();
             const localProducts = JSON.parse(localStorage.getItem("products")) || [];
-
-            // Оновлюємо дані продукту в масиві локальних продуктів
-            const updatedProducts = localProducts.map((prod) =>
-                prod.id === formData.id ? formData : prod
-            );
-
-            // Зберігаємо оновлений масив продуктів у локальному сховищі
+            const updatedProducts = localProducts.map((prod) => prod.id === formData.id ? formData : prod);
             localStorage.setItem("products", JSON.stringify(updatedProducts));
-
             fetchProduct();
-            notify();
             setActivePopup1(false);
         } catch (error) {
             console.error("Error with editing product", error);
@@ -98,8 +65,8 @@ const AddProduct = ({edit, item, setActivePopup, setActivePopup1}) => {
                 <span>Product name</span>
                 <input
                     className={css.product__input}
-                    title="Product name"
-                    placeholder="Product name"
+                    title="Назва товару"
+                    placeholder="Назва товару"
                     type="text"
                     name={"productName"}
                     value={formData.productName}
@@ -112,8 +79,8 @@ const AddProduct = ({edit, item, setActivePopup, setActivePopup1}) => {
                 <span>Purchase price</span>
                 <input
                     className={css.product__input}
-                    title="Purchase price"
-                    placeholder="Purchase price"
+                    title="Ціна Закупки"
+                    placeholder="Ціна Закупки"
                     type="number"
                     min="0"
                     name={"purchasePrice"}
@@ -126,8 +93,8 @@ const AddProduct = ({edit, item, setActivePopup, setActivePopup1}) => {
                 <span>Selling price</span>
                 <input
                     className={css.product__input}
-                    title="Selling price"
-                    placeholder="Selling price"
+                    title="Ціна продажу"
+                    placeholder="Ціна продажу"
                     type="number"
                     min="0"
                     name={"sellingPrice"}
@@ -141,11 +108,10 @@ const AddProduct = ({edit, item, setActivePopup, setActivePopup1}) => {
                 type="submit"
                 disabled={isDisabled}
             >
-                {edit ? "Edit  product" : "Create product"}
+                {edit ? "Редагувати" : "Створити товар"}
             </button>
             <ToastContainer/>
-        </form>
-    );
+        </form>);
 };
 
 export default AddProduct;

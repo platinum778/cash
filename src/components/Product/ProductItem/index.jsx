@@ -10,7 +10,7 @@ import { useProduct } from "@/components/Context";
 import AddProduct from "../AddProduct";
 import { toast } from "react-toastify";
 
-const ProductItem = ({ item }) => {
+const ProductItem = ({ item ,index}) => {
   const { id, productName, purchasePrice, sellingPrice } = item;
   const difference = sellingPrice - purchasePrice;
 
@@ -63,7 +63,7 @@ const ProductItem = ({ item }) => {
             />
           </PopUp>
         </td>
-        <td>{id} </td>
+        <td>{index +1} </td>
         <td
           className={css.product__td}
           onClick={() => copyToClipboard(productName)}

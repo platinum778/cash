@@ -48,11 +48,11 @@ a {
 
 :root {
   /* colors */
-  --bg: #cfcece;
+  --bg: #efefef;
   --bg-black: #b1b1b1;
   --bg-nav: #e4e3e3;
   --bg-button: #8bb9de;
-  --bg-table: #cbc8c8;
+  --bg-table: #ffffff;
   --bg-grey: rgb(211, 211, 211);
   --popup-translucent: rgb(0, 0, 0, 0.4);
 }

@@ -1,12 +1,11 @@
-
-import Hero from "@/components/Hero";
+import Visit from "@/components/Visit";
 
 export default function Home() {
 
 
     return (
         <>
-            <Hero/>
+            <Visit/>
         </>
     );
 }

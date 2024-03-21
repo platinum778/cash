@@ -8,10 +8,10 @@ const Navigation = () => {
       <div className="container">
         <div className={css.nav__wrapper}>
           <Link className={css.link} href={"/product"}>
-            Product
+            Мої Товари
           </Link>
-          <Link className={css.link} href={"/visit"}>
-            Visit
+          <Link className={css.link} href={"/"}>
+            Мої Візити
           </Link>
         </div>
       </div>
