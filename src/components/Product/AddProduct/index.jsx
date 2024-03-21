@@ -2,13 +2,13 @@ import React, {useState} from "react";
 import css from "./style.module.css";
 import {v4 as uuidv4} from "uuid";
 import {useProduct} from "@/components/Context";
-import {toast, ToastContainer} from "react-toastify";
+import {toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const AddProduct = ({edit, item, setActivePopup, setActivePopup1}) => {
     const {fetchProduct} = useProduct();
     const [formData, setFormData] = useState(edit ? {...item} : {
-        id: uuidv4(), productName: "", purchasePrice: 0, sellingPrice: 0,
+        id: uuidv4(), productName: "", purchasePrice: Number, sellingPrice: Number,
     });
     const notify = () => toast.success(edit ? "Успішно відредаговано" : "Успішно створено", {
         position: "bottom-right", autoClose: 3000, pauseOnHover: false,
@@ -36,7 +36,7 @@ const AddProduct = ({edit, item, setActivePopup, setActivePopup1}) => {
             setFormData({
                 id: uuidv4(), productName: "", purchasePrice: '', sellingPrice: '',
             });
-
+            notify()
         } catch (error) {
             console.error(error);
         }
@@ -50,6 +50,7 @@ const AddProduct = ({edit, item, setActivePopup, setActivePopup1}) => {
             localStorage.setItem("products", JSON.stringify(updatedProducts));
             fetchProduct();
             setActivePopup1(false);
+            notify()
         } catch (error) {
             console.error("Error with editing product", error);
         }
@@ -62,7 +63,7 @@ const AddProduct = ({edit, item, setActivePopup, setActivePopup1}) => {
             onSubmit={edit ? handleEdit : handleSubmit}
         >
             <label className={css.product__label}>
-                <span>Product name</span>
+                <span>Назва товару</span>
                 <input
                     className={css.product__input}
                     title="Назва товару"
@@ -76,7 +77,7 @@ const AddProduct = ({edit, item, setActivePopup, setActivePopup1}) => {
             </label>
 
             <label className={css.product__label}>
-                <span>Purchase price</span>
+                <span>Ціна закупки</span>
                 <input
                     className={css.product__input}
                     title="Ціна Закупки"
@@ -90,7 +91,7 @@ const AddProduct = ({edit, item, setActivePopup, setActivePopup1}) => {
                 />
             </label>
             <label className={css.product__label}>
-                <span>Selling price</span>
+                <span>Ціна продажу</span>
                 <input
                     className={css.product__input}
                     title="Ціна продажу"
@@ -110,7 +111,7 @@ const AddProduct = ({edit, item, setActivePopup, setActivePopup1}) => {
             >
                 {edit ? "Редагувати" : "Створити товар"}
             </button>
-            <ToastContainer/>
+
         </form>);
 };
 

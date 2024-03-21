@@ -21,7 +21,7 @@ const Visit = () => {
     }, []);
 
     const notify = () =>
-        toast.success("Succesfuly delete", {
+        toast.success("Успішно видалено!", {
             position: "bottom-right",
             autoClose: 3000,
             pauseOnHover: false,
@@ -48,23 +48,23 @@ const Visit = () => {
             console.error(error);
         }
     };
-
     const filteredArray = visit.filter((item) => {
         if (dateRange[0] && dateRange[1]) {
             return moment(item.date).isBetween(
                 dateRange[0],
                 dateRange[1],
                 null,
-                "[]"
+                "[[]]"
             );
         }
         return true;
     });
+
+
     const clearDateInput = () => {
         setDateRange([null, null]);
     };
 
-    console.log("filteredArray", filteredArray);
     const totalPurchasePrice = visit.reduce(
         (sum, obj) => obj.totalPurchasePrice + sum,
         0
