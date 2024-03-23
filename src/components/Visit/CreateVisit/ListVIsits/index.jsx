@@ -4,12 +4,10 @@ import {MdDelete} from "react-icons/md";
 import css from "./style.module.css";
 
 const ListVisit = ({visit, setVisit}) => {
-    const handleDelete = (id) => {
+    const handleDelete = (visitId) => {
         try {
-            const localVisits = JSON.parse(localStorage.getItem("visits")) || [];
-            const updatedVisits = localVisits.filter((visit) => visit.id !== id);
+            const updatedVisits = visit.filter((visit) => visit.id !== visitId);
             setVisit(updatedVisits);
-            localStorage.setItem("visits", JSON.stringify(updatedVisits));
         } catch (error) {
             console.error("Error deleting visit", error);
         }
