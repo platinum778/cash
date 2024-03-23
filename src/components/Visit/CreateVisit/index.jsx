@@ -14,7 +14,7 @@ const CreateVisit = ({setActivePopup, fetchVisit}) => {
 
     const {product} = useProduct();
     const notify = () =>
-        toast.success("Succesfuly create", {
+        toast.success("Успішно створено", {
             position: "bottom-right",
             autoClose: 3000,
             pauseOnHover: false,
